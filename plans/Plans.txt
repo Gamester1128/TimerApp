@@ -1,0 +1,564 @@
+Launcher will instantiate 2 threads.
+
+Thread 1
+>>>>>>>>
+	Thread 1 is the thread that will be put to sleep and 
+	then create the gui stating that times upppp!!!1
+	
+	
+Thread 2
+>>>>>>>>>
+	Thread 2 will be responsible for checking any user inputs u
+	using scanner.hasNextLine()?
+	
+How I want the program to run :D
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	-the program will initiate with the setting txt
+	
+	-settings txt will have the following settings:
+		+default time units eg if the has no units, what it should
+			default to minutes or seconds or even HOURS!!!
+		+if the program should start the time instantly after 
+			clicking enter to start. If this is true, then with
+			that have a variable to set the time to. 
+		+The URL to the image file cause no hard coding ;)
+		+...
+	
+	-if no settings were found, stop the program and notify user
+		the error
+	-Create Thread that will take inputs constantly aka Thread 2
+	-It will ask, ummm "(^-^) asks enter command: " cause why not :D
+	-if a number is entered, it will start thread 1 aka thread that
+		will be lazy and rest for set time. Unit will be determined by
+		settings. By default set it to minutes.
+	-The user can also ask for command set using "/help" 
+	-The user will be able to settings directly from the program.
+	-User can check settings from asking the kitty aka (^-^).
+	
+		
+		
+
+Thread 1 Properties and methods
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	1. Once instantiated, put the god damn thread to sleep.
+	2. Then wake it up by force after the set time (whether default
+		or from settings)
+	3. Afterwards, create GUI and say times up.
+
+Methods:
+
+getDuration() will be responsible to set the (^-^) to sleep 
+				in the right time depending on settings.
+				
+sleep()		  will set the thread to sleep after getting the
+			    right duration
+
+createGUI()   will be responsible for creating the gui with 
+				the image and display how long it actually took
+
+toFront()	  will make sure that the display is always at the front
+			    which I found in stack overflow. It should only run
+			    every 5 seconds to ensure minimum performance costs.
+			    
+start()
+stop()		  Of the thread as it will implement Runnable
+
+init()		  for anything that needs to be initialised at the start.
+
+run()		  This is the method that is run when the thread is 
+				started, thus will have the while loop to make sure that
+				it will keep displaying and centering the gui.
+				
+Possible Variables:
+JFrame 			cause GUI 
+canvas 			to draw image
+runnable 		which will keep the while loop running as bad practice to have while(true)
+defaultUnit		which will determine whether its seconds, minutes or hours.
+defaultTime		set to -1 if settings says false for having preset time.
+
+
+
+
+
+Thread 2 Properties and methods
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+This Thread is responsible for any user inputs.
+Once instantiated, will keep checking for user input using scanner.hasNextLine()
+
+The user should be able to do the following:
+	1. if defaulTime is not -1, type start and starts automatically
+	2. if defaultTime is -1 or less than 0, then ask for what time.
+	3. if type /help, give help of how the program works and list all commands available to
+		use.
+
+if inputs are.... Then ....
+
+/start 	then	starts to default time. If no default time, then error message
+
+4		then	Start Timer with that duration and default unit.
+
+4 m
+4 s
+4 hr		then	Does not use default unit and uses those units.
+
+/remainingTime	then	displays how much time is left before timer ends.
+
+/timePassed		then	displays how long the timer has been running for
+
+/stop			then	closes the program.
+	
+
+	
+Commands: 
+/help
+/pause
+/setDefaultTime <Integer> <Unit>
+/stop
+/reset
+/remainingTime
+/timePassed
+
+
+Methods()
+
+isCommand()		returns if input is a command (includes /)
+
+doCommand()				procedure that does the command
+
+checkIfTime()			returns boolean if its eg 4 m or 4 
+
+startTimer()			procedure that starts timer with the duration
+
+ifDefaultTime()			checks if there is a default time set
+
+getDefaultTime()		returns the default time from the settings.txt
+
+
+
+Variables:
+String ERROR_MESSAGE
+ummm....I think I'm done, hahahhaa, at least i tried.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+			-----------------------
+			Build: undefined(alpha)
+			-----------------------
+The Timer app could only start a time in minutes.
+After the time had finished, the warning GUI is displayed and once closed,
+closes the entire program.
+
+---------------------------
+ 			 Build 0.683 
+---------------------------
+
+A lot was achieved and not documented. 
+Program is a timer currently that has the following features:
+
+Takes in Commands like
+/help (No help text has been created, but feature works)
+/start (necessary features work, including: starts to default time if there is one,
+		does not start if there is no default time)
+/remainingtime	(gives the remaining time in decimal for minutes or seconds.)
+/timepassed	(gives the time that has passed since start, in minutes or seconds, still in decimal though)
+/pause	(No feature)
+/stop	(Stops the timer and displays the GUI warning with how much time has passed. Not what I
+		(wanted however works for now)
+/giveThreads	(displays all the currently running threads cause why not. Maybe at password for this
+				(as users should not be able to use this feature)
+/setdefaulttime 	(not implemented yet/displays out of order)
+/reset			(not implemented yet/displays out of order)
+
+and some others... I aint got time... gotta revise, do some mafths on projectiles then sleep and
+revise early morning for electronics test. Oh and also start developing the design document as time
+is running out...Ha get it? Timer app...time...anyways...Goodnight document.
+
+
+
+Errors Found
+............
+when typed ".stop", the following was the entire console for the entire session of the program:
+
+/*Start*/
+C:\Users\user\Desktop\Rahul's School stuff\Computer Science A level\Timer Build 0.685>java -jar Timer.jar
+| Timer App | Build: 0.685 |
+-> Please enter command: /help
+---> Guide coming soon (^-^)
+-> Please enter command: .stop
+---> Command not found!
+---> 3...2..1.GOOO \(^-^)/
+-> Please enter command: Exception in thread "Timer Thread" java.lang.IllegalArgumentException: timeout value is negative
+        at java.lang.Thread.sleep(Native Method)
+        at com.timer.Timer.sleep(Timer.java:95)
+    at com.timer.Timer.run(Timer.java:121)
+        at java.lang.Thread.run(Unknown Source)
+
+/*Stop*/
+
+
+---------------------------
+			 Build 0.690
+---------------------------
+Plans
+=====
+-COMPLETED Fix previous error, should be quite simple.
+
+-COMPLETED every command is an object. Super Class Command which is abstract
+
+-COMPLETED each object should have:
+doCommand() which will do whatever that command is supposed to do
+keys		an array of names which will activate the code
+isCommand() check if it matches with any of the keys of the command
+
+COMPLETED how the checkInput will check if it matches with any keys
+
+pseudo code start
+ 
+listC will be an array of all commands. 
+
+	for i = 0 to listC.length 			
+		if listC[i].isCommand(input) then
+			found = true
+			break;
+		end if
+	next i
+	
+	if found
+		listC[i].doCommand(?)
+	else
+		print command not found
+	end if
+
+PLAN END
+========			   						    
+			    
+Plan Success:
+everything has been met.
+
+---------------------------
+		Build 0.700
+---------------------------
+
+This build will be a simple build
+It will only involve implementation of sound when timer is on
+
+The program should play a sound when timer has finished.
+
+To make the sound not annoying, I will need to add a command in settings to 
+turn on/off sound and a command in the commandline.
+
+Plans
+-----------------
+Class CSound - will be responsible for playing the sound and detecting command call.
+
+isCommand() will detect for /sound
+-typing /sound will NOT (!) the current sound boolean
+
+Class CSound will extend Commands class
+
+In Backup, detect for "sound = on" or "sound = off"
+Make sure to lower case on/off to make it easier to detect
+
+other subroutines/Attributes: 
+---------------------------------
+doCommand() will turn on/off sound
+
+isSoundOn() returns true if sound is on
+
+isSoundOff() returns true if sound is off
+
+playSound() will turn on sound
+
+stopSound() will print out of order (Implementation in future versions)
+
+
+
+I think thats it
+
+
+
+Order of implementation
+--------------------------
+
+1. Settings will detect for sound is on/off
+2. Create CSound Class
+3. Shortcut /sound works
+4. doCommand() works
+5. Settings turns on/off sound
+6. turning on/off sounds works
+7. isSoundOn() or isSoundOff() works
+8. stopSound() prints out of order
+9. playSound() plays a sound
+10. Timer plays a sound when timer has finished.
+
+How much worked?
+Works = 1,2,3,4,5,6,7,8,9,10
+YAY everything has been completed and is able to play and turn off sound from settings and through commands
+
+
+Next Iteration Plans
+--------------------
+Create CommandMessage Class which is static and contains
+all the messages necessary
+
+
+
+---------------------------
+		Build 0.701
+---------------------------
+
+added pewdiepie saying stop endlessly 
+>:D
+
+---------------------------
+		Build 0.702
+---------------------------
+
+Quick, horrible implementation of switching sounds
+Will not have control on if it should keep repeating
+Its bad but I want to be able to swap.
+
+To create this I will have to say in settings 1 or 2
+1 for creeper aw man will not repeat endlessly
+2 for pewdiepie which will repeat endlessly
+
+in settings, the option will be
+sound_song = n 
+n being number of the song
+
+Plans
+1. detects setting in settings.txt correctly
+2. Changes depending on the settings
+
+How much worked?
+Works = 1,2
+
+Everything works but all the code is horrible
+Must fix in future iterations to improve changeability
+
+
+
+
+---------------------------
+		Build 0.708
+---------------------------
+
+
+-Trying to Use Inner Class to organise all 
+sound commands in one class
+
+Plan 1:
+-Get Sound State working with inner class.
+
+Result:
+Works but messy code
+
+
+Plan 2:
+Fix current system for setting sound and etc
+
+Result: 
+Really didn't do much :)
+
+
+Plan 3 (The real plan of this):
+Be able add sound paths and set if should iterate
+using settings.
+
+FOllowing should work in settings
+
+sound_1 = creeper_aw_man.wav
+sound_2 = pewdiepie_stop.wav
+
+sound_1_iterate = false
+sound_2_iterate = true
+
+
+
+
+FUTURE PLAN
+-Thread for playing sound with a chosen gap.
+-Add Sound backing up related methods in
+another class to organise things
+
+
+OVERALL: WAS ABLE TO ADD SETTINGS FUNCTIONALITY
+
+
+
+
+
+---------------------------
+		Build 0.710
+---------------------------
+
+Objectives:
+-Clean up backup class to not contain all methods
+related to sound for backing up and place those
+methods in BSound class
+-Make sound work/organise for all classes
+-Add command /list song to list all songs with their number
+-Add command to swap between songs eg 
+-the iterate booleans for each song should work
+
+Progress:
+1....Done
+2....Done
+3....Done kind of, since it currently set to /listsong
+4....Nah...
+5....Done
+
+Evaluation:
+-Overall, there needs an improvement in the engine of checking
+because there is no system to detect for an operation with
+and operand. The current Sound State is a bit meh also
+
+
+Features Added User Perspective:
+-/listsong lists all the songs
+-Can see all songs added
+-displays any errors when loading any of the songs
+
+
+FUTURE PLANS 
+-Upgrade current input checking engine
+-organise code so that anything not related
+to checking input is not in CheckInput
+
+
+
+
+
+---------------------------
+		Build 0.711
+---------------------------
+
+Objectives:
+-adding a pause function
+-"/pause" will pause the timer
+-"/pause" when paused will unpause timer
+
+
+Progress
+1....2....3....works
+
+Evaluation:
+I think the whole system needs to be rebuilt
+The current way the system is, is very unmaintainable and needs
+to be fixed completely from scratch.
+
+
+
+---------------------------
+		Build 1.000
+---------------------------
+
+Objectives:
+-creating a clean system to read files with loads of data like "<nametag> = <value>"
+-Move some utilities classes and change any where appropriate
+-Rewrite Watch class
+-Basically did a lot of stuff already but in short it now supports "start", "quit", "stop" and "thread count"
+
+-Planning:
+{
+So i wanna be able to use following functions to get data from an .oto file
+obj = new OTOObject(String path); 
+obj.getValue("<nametag>"); returns String
+obj.getAllTags(); returns String[] of all <nametag>s
+
+Watch class will now need instances 
+
+}
+
+Learning_Required:
+-Learning to use hashmaps in Java
+
+Completed
+-1,2,3,4
+
+What is in the feature:
+now supports a delay system
+start works with units
+a little cute countdown but timer also starts with it which Ill need to change after to be an option
+State system to having commands
+quitting now says goodbye and closes after 2 seconds
+many bugs :D
+program no longer needs to close to start a timer again. Can start a timer again after one has ended.
+
+---------------------------
+		Build 1.001
+---------------------------
+
+Objectives:
+-Pause system
+-help function working
+
+Achieved:
+1, 2
+
+
+---------------------------
+		Build 1.003
+---------------------------
+
+Objectives:
+-Validate commands so far
+-Timer starting based on what time it should end
+
+-Planning:
+{
+writing something like "start 13:56"
+}
+
+Achieved:
+-Validated prior commands
+-command called "time" with arguments of "now" telling time now,
+"passed" telling time passed from timer being started, "remaining"
+telling how much time is left before timer stops
+-"quit" command now doesn't allow input when in phase of saying goodbye
+
+Bugs fixed:
+-when stopping, program throws runtime exception due to
+incorrect if statement for throwing exception
+
+
+---------------------------
+		Build 1.003
+---------------------------
+
+Fixed output message for the time when TimerWarning displays UI
+added a system to add objectives when starting timer of which it displays in the UI
+
+
+---------------------------
+		Build 1.101
+---------------------------
+
+Added Score System
+Added JSON library
+added score tracker
+added render string with shadow
+added random song play
+added random image to be set
+added fixed height for images
+
+
+
+
+

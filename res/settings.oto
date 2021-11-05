@@ -1,0 +1,11 @@
+c=2
+fartnoises=5
+default_time=25
+default_unit=m
+startASAP=true		//If 4 is typed, if it is true then dont wait for /start
+sound_1=creeper_aw_man.wav,false
+sound_2=pewdiepie_stop.wav,true
+sound=on
+sound_song=2
+
+

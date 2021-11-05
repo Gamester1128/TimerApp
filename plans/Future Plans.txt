@@ -1,0 +1,40 @@
+CheckList of all Future Plans will be written here and then transferred to build version to develop :D
+
+FUTURE PLANS
+
+
+Entering a password somewhere so you get access to certain commands that you dont have access to.
+
+Time passed and time remaining commands to be displaying in hours and 
+minutes and seconds if > an hour and continue for other times
+
+Be able to assign shortcuts to commands in settings, as many as the user wishes.
+
+A stopwatch command so that the program behaves like a stop watch rather than just a timer...
+even tho the program is meant for being a timer lol.
+
+When fartnoises is put to the right number, the program will make fartnoises at random times :DDD
+
+When c = 2 is typed in settings, the user is told, "Oh wow you have found some gem of a command that 
+was first used during first stage of the program to test whether reading files and backup class worked"
+
+Program sends what time it is every set time from settings (like every minute it tells time passed or
+remaining time).
+
+"/changelog versions" will list all the versions of the program
+"/changelog 7.10" would list what changed in that specific version.
+--->>> /changelog is automatically done using plans folder :) <<<<-----------
+for example "/changelog 7.10" would search in the plans.txt folder for it :D
+
+All help guides for each command should be written in a text file
+
+Add a system of having several different timer setups for default time like do "start studyingSession" which will
+start the timing app with the time, unit and sound based on the profile for "studyingSession"
+
+
+Completed Plans
+-Sound played when times up. This can be an option in settings.
+-/about explaining what the program does.
+-/stop the timer and can start again.
+-/quit command to do close the entire program
+-The program should not stop when the warning GUI is closed.
